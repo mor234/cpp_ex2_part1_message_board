@@ -76,8 +76,8 @@ TEST_CASE("Simple cases: good Post and Read") {
 	CHECK(board2.read(/*row=*/11112, /*column=*/35670, Direction::Vertical, /*length=*/4)=="abcd") ;
     
      //overrwrite in the same location
-    board1.post(/*row=*/11112, /*column=*/35670, Direction::Vertical, "1234");
-   	CHECK(board1.read(/*row=*/11112, /*column=*/35670, Direction::Vertical, /*length=*/4)=="1234") ;
+    board2.post(/*row=*/11112, /*column=*/35670, Direction::Vertical, "1234");
+   	CHECK(board2.read(/*row=*/11112, /*column=*/35670, Direction::Vertical, /*length=*/4)=="1234") ;
 
 }
 
