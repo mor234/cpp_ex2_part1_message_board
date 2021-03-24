@@ -24,7 +24,6 @@ TEST_CASE("Simple cases: good Post and Read") {
  //******Post on empty location******//
 
     //***Horizontal***//
-
     board1.post(/*row=*/0, /*column=*/0, Direction::Horizontal, "abcd");
 	CHECK(board1.read(/*row=*/0, /*column=*/0, Direction::Horizontal, /*length=*/4)=="abcd") ; 
     
@@ -45,7 +44,11 @@ TEST_CASE("Simple cases: good Post and Read") {
 
     board1.post(/*row=*/11112, /*column=*/35670, Direction::Horizontal, "abcd");
 	CHECK(board1.read(/*row=*/11112, /*column=*/35670, Direction::Horizontal, /*length=*/4)=="abcd") ;
-        
+
+    //overrwrite in the same location
+    board1.post(/*row=*/11112, /*column=*/35670, Direction::Horizontal, "1234");
+   	CHECK(board1.read(/*row=*/11112, /*column=*/35670, Direction::Horizontal, /*length=*/4)=="1234") ;
+
    
 
 
@@ -71,6 +74,10 @@ TEST_CASE("Simple cases: good Post and Read") {
 
     board2.post(/*row=*/11112, /*column=*/35670, Direction::Vertical, "abcd");
 	CHECK(board2.read(/*row=*/11112, /*column=*/35670, Direction::Vertical, /*length=*/4)=="abcd") ;
+    
+     //overrwrite in the same location
+    board1.post(/*row=*/11112, /*column=*/35670, Direction::Vertical, "1234");
+   	CHECK(board1.read(/*row=*/11112, /*column=*/35670, Direction::Vertical, /*length=*/4)=="1234") ;
 
 }
 
