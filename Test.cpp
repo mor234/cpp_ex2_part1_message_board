@@ -10,16 +10,12 @@
 
 using namespace ariel;
 #include <string>
-//bad -post on
-//read somting that isnt their
-
-//post on empty place
-//post on something
-//מודעה ריקה
 
 
-    Board board1;
-    Board board2;
+
+Board board1;
+Board board2;
+
 TEST_CASE("Simple cases: good Post and Read") {
  //******Post on empty location******//
 
@@ -82,6 +78,7 @@ TEST_CASE("Simple cases: good Post and Read") {
 }
 
 TEST_CASE("Post and Read empty messeges") {
+
     //******Read from empty location******//
     //***Horizontal***//
     CHECK(board2.read(/*row=*/1000, /*column=*/1000, Direction::Horizontal, /*length=*/4)=="____");
@@ -113,7 +110,6 @@ TEST_CASE("Post and Read empty messeges") {
 }
 
 TEST_CASE("General cases: Post and Read") {
-
 
     //******General Cases:******//
     Board board;
